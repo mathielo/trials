@@ -12,6 +12,8 @@
   <%= current_user.email   %>
   <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
   <hr />
+<% else %>
+  <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2) %>
 <% end %>
 
 <p class="notice"><%= notice %></p>
