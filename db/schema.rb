@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150701202644) do
+ActiveRecord::Schema.define(version: 20150709135105) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -42,5 +42,12 @@ ActiveRecord::Schema.define(version: 20150701202644) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "zombies", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.string   "graveyard",  limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
 end
